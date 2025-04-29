@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import './ContactSection.css';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPaperPlane, FaRocket, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaPaperPlane, FaRocket, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
@@ -45,6 +45,7 @@ const ContactSection = () => {
 
       <div className="contact-container">
         {/* Contact Form */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
         <motion.form 
           ref={formRef}
           onSubmit={handleSubmit}
@@ -109,14 +110,14 @@ const ContactSection = () => {
         <div className="social-links">
           <h3>Or establish subspace communication:</h3>
           <div className="social-icons">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/m-arfin-aryasatya/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/AKplayz" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter />
+            <a href="https://www.instagram.com/arfin_arya" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
             </a>
           </div>
         </div>

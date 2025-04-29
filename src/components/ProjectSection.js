@@ -13,21 +13,21 @@ const ProjectsSection = () => {
     {
       id: 1,
       title: "Portfolio Space Project",
-      description: "I'm excited to share my latest project: a space-themed portfolio where cutting-edge technology meets artistic imagination.Every element — from the spinning planets to the nebula gradients — was crafted to transform a developer’s portfolio into a full-blown experience.",
-      tags: ["React", "Three.js", "WebGL"],
+      description: "I'm excited to share my latest project: a space-themed portfolio where cutting-edge technology meets artistic imagination.Every element from the spinning planets to the nebula gradients was crafted to transform a developer’s portfolio into a full-blown experience.",
+      tags: ["React", "Three.js", "CSS", "JavaScript", "Node.js"],
       type: "frontend",
       featured: false,
       // github: "https://github.com/yourusername/bumi",
-      liveDemo: "https://yourwebsite.com/bumi",
+      liveDemo: "https://drive.google.com/file/d/1WO1lS43Ip6TQBfVZ9JFZ6ezu3H0WgJDX/view?usp=sharing",
       techStack: ["React", "Three.js", "GSAP", "React Spring", "Framer Motion"],
       features: [
-        "Real-time 3D rendering of solar system",
-        "Interactive planet information panels",
-        "Accurate orbital mechanics simulation",
-        "Mobile-responsive design",
+        "Three.js & React Three Fiber: Engineered the 3D planetary navigation system and realistic starfield animations, optimized for smooth performance",
+        "Framer Motion: Crafted micro-interactions that make the UI feel alive (watch how project cards orbit into view!)",
+        "EmailJS Built a secure respond for my contact form's subspace communication system directly to email",
+        "Responsive Design: Ensures the experience adapts seamlessly from desktop to mobile",
         "Custom shader effects for atmospheric glow"
       ],
-      screenshot: "bumi-screenshot.jpg" // <--- Correct: filename only
+      screenshot: "me.PNG" // <--- Correct: filename only
     },
     {
       id: 2,
