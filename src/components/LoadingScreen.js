@@ -1,5 +1,4 @@
-// LoadingScreen.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { FaRocket, FaSatellite, FaRegStar, FaChevronRight } from 'react-icons/fa';
 
@@ -8,8 +7,8 @@ const LoadingScreen = () => {
   const [status, setStatus] = useState('Initializing systems...');
   const [showSkip, setShowSkip] = useState(false);
 
-  // Enhanced status messages with emojis
-  const loadMessages = [
+  // Memoize messages to prevent recreation on every render
+  const loadMessages = useMemo(() => [
     { text: '🚀 Preparing launch sequence...', duration: 800 },
     { text: '🛰️ Calibrating navigation systems...', duration: 1200 },
     { text: '🌌 Loading stellar data...', duration: 1000 },
@@ -17,7 +16,7 @@ const LoadingScreen = () => {
     { text: '🔭 Aligning telescopes...', duration: 900 },
     { text: '🪐 Establishing orbital connection...', duration: 1100 },
     { text: '✨ Ready for launch!', duration: 500 }
-  ];
+  ], []);
 
   useEffect(() => {
     // Show skip button after 2 seconds
@@ -45,7 +44,7 @@ const LoadingScreen = () => {
       clearInterval(interval);
       clearTimeout(skipTimer);
     };
-  }, []);
+  }, [loadMessages]); // Now includes loadMessages in dependencies
 
   return (
     <motion.div 
