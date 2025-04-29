@@ -1,0 +1,293 @@
+/* client/src/components/ContactSection.css */
+.contact-section {
+  min-height: 100vh;
+  padding: 5rem 10%;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: 
+    radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+}
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #6495ed;
+    text-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
+  }
+  
+  .title-number {
+    color: rgba(100, 149, 237, 0.3);
+    margin-right: 0.5rem;
+  }
+  
+  .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  .contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: rgba(10, 25, 47, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(100, 149, 237, 0.3);
+    box-shadow: 0 0 30px rgba(100, 149, 237, 0.1);
+    backdrop-filter: blur(5px);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #6495ed;
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(0, 10, 30, 0.7);
+    border: 1px solid rgba(100, 149, 237, 0.1);
+    border-radius: 5px;
+    color: white;
+    font-family: inherit;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #6495ed;
+    box-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .launch-button {
+    background: linear-gradient(135deg, #6495ed, #4169e1);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .launch-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(100, 149, 237, 0.4);
+  }
+  
+  .launch-button:disabled {
+    background: linear-gradient(135deg, #4169e1, #1e3c8a);
+    cursor: not-allowed;
+  }
+  
+  .spinning {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .social-links {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    background: rgba(10, 25, 47, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(100, 149, 237, 0.3);
+    box-shadow: 0 0 30px rgba(100, 149, 237, 0.1);
+    backdrop-filter: blur(5px);
+  }
+  
+  .social-links h3 {
+    color: #6495ed;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px currentColor;
+  }
+  
+  .social-icons a:hover {
+    color: #6495ed;
+    transform: translateY(-3px);
+  }
+  
+  .rocket-container {
+    position: absolute;
+    bottom: -50px;
+    right: 50px;
+    width: 150px;
+    height: 300px;
+    z-index: 1;
+  }
+  
+  .rocket {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    color: #ff7f50;
+    transition: all 3s ease-in-out;
+    filter: drop-shadow(0 0 5px #ff7f50);
+
+  }
+  
+  .rocket.launching {
+    bottom: 1000px;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  
+  .exhaust {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 30px;
+    background: linear-gradient(to top, #ff7f50, #f1c40f, transparent);
+    border-radius: 50% 50% 0 0;
+    filter: blur(3px) brightness(1.5);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .rocket.launching .exhaust {
+    height: 100px;
+    width: 20px;
+    opacity: 1;
+  }
+  
+  .launch-pad {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 50px;
+    background: linear-gradient(to top, #222, #444);
+    clip-path: polygon(0% 100%, 20% 0%, 80% 0%, 100% 100%);
+    filter: drop-shadow(0 0 5px rgba(255, 127, 80, 0.5));
+
+  }
+  
+  .status-message {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    z-index: 100;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .status-message.success {
+    background: rgba(46, 204, 113, 0.9);
+    color: white;
+  }
+  
+  .status-message.error {
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+  }
+  
+  /* Background stars */
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 40px 70px, #6495ed, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 80px 40px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 120px 80px, #ff7f50, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 160px 20px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 200px 60px, #9b59b6, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 30px 150px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 70px 120px, #2ecc71, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 150px 30px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 180px 70px, #f1c40f, rgba(0,0,0,0));
+    background-size: 200px 200px;
+    animation: twinkle 5s infinite alternate;
+  }
+  
+  @keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .rocket-container {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      margin-top: 2rem;
+      order: 3;
+    }
+    
+    .contact-form,
+    .social-links {
+      background: rgba(0, 5, 15, 0.8);
+      border: 1px solid rgba(100, 149, 237, 0.2);
+      box-shadow: 0 0 20px rgba(100, 149, 237, 0.1);
+      width: 100%;
+      max-width: 100%;
+    }
+  }

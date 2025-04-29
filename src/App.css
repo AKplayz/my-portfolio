@@ -1,0 +1,107 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* src/index.css or your main CSS file */
+:root {
+  --space-dark: #090A0F;
+  --space-darker: #04050A;
+  --space-blue: #1B2735;
+  --star-white: rgba(255, 255, 255, 0.8);
+  --star-blue: rgba(100, 149, 237, 0.8);
+  --star-orange: rgba(255, 127, 80, 0.8);
+  --star-purple: rgba(155, 89, 182, 0.8);
+  --star-green: rgba(46, 204, 113, 0.8);
+  --star-yellow: rgba(241, 196, 15, 0.8);
+}
+
+body {
+  background: radial-gradient(ellipse at bottom, var(--space-blue) 0%, var(--space-dark) 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+/* Starfield background for all sections */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, var(--star-white), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 40px 70px, var(--star-blue), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 80px 40px, var(--star-white), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 120px 80px, var(--star-orange), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 160px 20px, var(--star-white), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 200px 60px, var(--star-purple), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 30px 150px, var(--star-white), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 70px 120px, var(--star-green), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 150px 30px, var(--star-white), rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 180px 70px, var(--star-yellow), rgba(0,0,0,0));
+  background-size: 200px 200px;
+  animation: twinkle 5s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* Section containers */
+.section-container {
+  background: rgba(0, 5, 15, 0.8);
+  border: 1px solid rgba(100, 149, 237, 0.2);
+  box-shadow: 0 0 20px rgba(100, 149, 237, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+/* Section titles */
+.section-title {
+  text-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
+}
+
+/* Interactive elements */
+button, a {
+  transition: all 0.3s ease;
+}
+
+button:hover, a:hover {
+  filter: brightness(1.2) drop-shadow(0 0 3px currentColor);
+}
