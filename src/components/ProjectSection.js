@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ProjectSection.css';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaServer, FaGithub, FaExternalLinkAlt, FaRegStar, FaCode, FaRocket } from 'react-icons/fa';
+import { /*FaServer,*/ FaGithub, FaExternalLinkAlt, FaRegStar, FaCode, FaRocket } from 'react-icons/fa';
 import { GiGalaxy, GiOrbital } from 'react-icons/gi';
 
 const ProjectsSection = () => {
@@ -83,7 +83,7 @@ const ProjectsSection = () => {
 
   const filteredProjects = activeFilter === 'all'
     ? projects
-    : projects.filter(project => project.type === activeFilter || (activeFilter === 'featured' && project.featured));
+    : projects.filter(project => project.type === activeFilter /*|| (activeFilter === 'featured' && project.featured) */);
 
   const calculateOrbitPosition = (index, total) => {
     const radius = Math.min(viewportSize.width, viewportSize.height) * 0.3;
@@ -132,7 +132,7 @@ const ProjectsSection = () => {
         >
           <FaCode /> Frontend
         </button>
-        <button 
+        {/* <button 
           className={`filter-btn ${activeFilter === 'backend' ? 'active' : ''}`}
           onClick={() => setActiveFilter('backend')}
         >
@@ -143,7 +143,7 @@ const ProjectsSection = () => {
           onClick={() => setActiveFilter('featured')}
         >
           <FaRegStar /> Featured
-        </button>
+        </button> */}
       </motion.div>
 
       <div className="projects-solar-system">

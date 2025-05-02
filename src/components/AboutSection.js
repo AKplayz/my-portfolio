@@ -2,7 +2,7 @@
 import React from 'react';
 import './AboutSection.css';
 import { motion } from 'framer-motion';
-import Astronaut from '../assets/astrofin.jpg'; // You'll need an astronaut image
+import Astronaut from '../assets/fin6.jpeg'; // You'll need an astronaut image
 
 const AboutSection = () => {
   return (

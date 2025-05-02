@@ -20,7 +20,7 @@
     position: relative;
     flex: 1;
     max-width: 400px;
-    filter: drop-shadow(0 0 15px rgba(100, 149, 237, 0.5));
+    filter: drop-shadow(0 0 15px rgba(80, 113, 173, 0.5));
   }
   
   .astronaut-img {
@@ -28,7 +28,7 @@
     height: 100%;
     z-index: 2;
     position: relative;
-    filter: drop-shadow(0 0 20px rgba(100, 149, 237, 0.5));
+    filter: drop-shadow(0 0 10px rgba(71, 97, 145, 0.5));
   }
   
   .orbit {
