@@ -1,4 +1,4 @@
-/* client/src/components/SkillsSection.css */
+
 .skills-section {
     min-height: 100vh;
     padding: 5rem 10%;
@@ -144,7 +144,7 @@
     background: rgba(0, 15, 30, 0.9);
   }
   
-  /* Shooting Stars */
+
   .shooting-star {
     position: absolute;
     width: 4px;
@@ -170,7 +170,7 @@
     }
   }
   
-  /* Background Constellations */
+
   .constellation-bg {
     position: absolute;
     top: 0;
@@ -195,7 +195,7 @@
     100% { opacity: 1; }
   }
   
-  /* Responsive Design */
+
   @media (max-width: 768px) {
     .skills-grid {
       grid-template-columns: 1fr;

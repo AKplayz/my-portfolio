@@ -1,161 +1,202 @@
-/* client/src/components/AboutSection.css */
 .about-section {
-    min-height: 100vh;
-    padding: 5rem 10%;
-    position: relative;
-    overflow: hidden;
-    color: #fff;
+  min-height: 100vh;
+  padding: 5rem 10%;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  z-index: 1;
+  position: relative;
+}
+
+.astronaut-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+  filter: drop-shadow(0 0 15px rgba(100, 149, 237, 0.5));
+}
+
+.astronaut-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+.tilt-card {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(0, 10, 30, 0.7);
+  box-shadow: 0 20px 40px rgba(100, 149, 237, 0.4);
+  z-index: 2;
+}
+
+.orbit {
+  pointer-events: none;
+}
+.orbit-1 {
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+  animation-duration: 30s;
+}
+
+.orbit-2 {
+  width: 130%;
+  height: 130%;
+  top: -15%;
+  left: -15%;
+  animation-duration: 40s;
+}
+
+.orbit-3 {
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  animation-duration: 50s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
-  
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.about-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #6495ed;
+}
+
+.title-number {
+  color: rgba(100, 149, 237, 0.3);
+  margin-right: 0.5rem;
+}
+
+.planet-bio {
+  background: rgba(0, 10, 30, 0.7);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(100, 149, 237, 0.2);
+  box-shadow: 0 0 30px rgba(100, 149, 237, 0.1);
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #6495ed;
+  font-weight: bold;
+}
+
+/* Typing Animation Styles */
+.typing-animation {
+  color: #6495ed;
+  font-weight: bold;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: #6495ed;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-list li {
+  background: rgba(100, 149, 237, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid rgba(100, 149, 237, 0.3);
+  cursor: default;
+  transition: all 0.3s ease;
+}
+
+.skills-list li:hover {
+  background: rgba(100, 149, 237, 0.2);
+  box-shadow: 0 5px 15px rgba(100, 149, 237, 0.2);
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.3;
+  z-index: 0;
+  animation: float infinite ease-in-out;
+}
+
+.element-1 {
+  top: 20%;
+  left: 5%;
+  animation-duration: 15s;
+}
+
+.element-2 {
+  top: 60%;
+  right: 10%;
+  animation-duration: 20s;
+  animation-delay: 2s;
+}
+
+.element-3 {
+  bottom: 10%;
+  left: 15%;
+  animation-duration: 25s;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   .about-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 5rem;
-    z-index: 1;
-    position: relative;
+    flex-direction: column;
   }
-  
+
   .astronaut-wrapper {
-    position: relative;
-    flex: 1;
-    max-width: 400px;
-    filter: drop-shadow(0 0 15px rgba(80, 113, 173, 0.5));
+    margin-bottom: 3rem;
   }
-  
-  .astronaut-img {
-    width: 300px;
-    height: 100%;
-    z-index: 2;
-    position: relative;
-    filter: drop-shadow(0 0 10px rgba(71, 97, 145, 0.5));
-  }
-  
-  .orbit {
-    position: absolute;
-    border: 1px dashed rgba(100, 149, 237, 0.5);
-    border-radius: 50%;
-    animation: rotate infinite linear;
-    border-color: rgba(100, 149, 237, 0.1);
-  }
-  
-  .orbit-1 {
-    width: 110%;
-    height: 110%;
-    top: -5%;
-    left: -5%;
-    animation-duration: 30s;
-  }
-  
-  .orbit-2 {
-    width: 130%;
-    height: 130%;
-    top: -15%;
-    left: -15%;
-    animation-duration: 40s;
-  }
-  
-  .orbit-3 {
-    width: 150%;
-    height: 150%;
-    top: -25%;
-    left: -25%;
-    animation-duration: 50s;
-  }
-  
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  
-  .about-content {
-    flex: 1;
-    max-width: 600px;
-  }
-  
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #6495ed;
-  }
-  
-  .title-number {
-    color: rgba(100, 149, 237, 0.3);
-    margin-right: 0.5rem;
-  }
-  
-  .planet-bio {
-    background: rgba(0, 10, 30, 0.7);
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid rgba(100, 149, 237, 0.2);
-    box-shadow: 0 0 30px rgba(100, 149, 237, 0.1);
-    line-height: 1.6;
-    
-  }
-  
-  .highlight {
-    color: #6495ed;
-    font-weight: bold;
-  }
-  
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 1.5rem 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .skills-list li {
-    background: rgba(100, 149, 237, 0.1);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    border: 1px solid rgba(100, 149, 237, 0.3);
-    cursor: default;
-  }
-  
-  .floating-element {
-    position: absolute;
-    font-size: 2rem;
-    opacity: 0.3;
-    z-index: 0;
-    animation: float infinite ease-in-out;
-  }
-  
-  .element-1 {
-    top: 20%;
-    left: 5%;
-    animation-duration: 15s;
-  }
-  
-  .element-2 {
-    top: 60%;
-    right: 10%;
-    animation-duration: 20s;
-    animation-delay: 2s;
-  }
-  
-  .element-3 {
-    bottom: 10%;
-    left: 15%;
-    animation-duration: 25s;
-    animation-delay: 1s;
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .about-container {
-      flex-direction: column;
-    }
-    
-    .astronaut-wrapper {
-      margin-bottom: 3rem;
-    }
-  }
+}

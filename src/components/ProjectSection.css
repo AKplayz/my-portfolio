@@ -1,11 +1,12 @@
-/* ProjectsSection.css */
 .projects-section {
   position: relative;
   overflow: hidden;
   padding: 8rem 5%;
-  background: radial-gradient(ellipse at center, 
-    rgba(27, 39, 53, 0.2) 0%, 
-    rgba(9, 10, 15, 0.8) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(27, 39, 53, 0.2) 0%,
+    rgba(9, 10, 15, 0.8) 100%
+  );
 }
 
 .space-background {
@@ -21,16 +22,31 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(155, 89, 182, 0.05) 0%, transparent 20%),
-    radial-gradient(circle at 80% 70%, rgba(100, 149, 237, 0.05) 0%, transparent 25%),
-    radial-gradient(circle at 50% 10%, rgba(255, 127, 80, 0.05) 0%, transparent 15%);
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(155, 89, 182, 0.05) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(100, 149, 237, 0.05) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 10%,
+      rgba(255, 127, 80, 0.05) 0%,
+      transparent 15%
+    );
   animation: rotate-background 120s linear infinite;
 }
 
 @keyframes rotate-background {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .floating-asteroids {
@@ -41,7 +57,7 @@
 
 .floating-asteroids::before,
 .floating-asteroids::after {
-  content: '';
+  content: "";
   position: absolute;
   border-radius: 50%;
   filter: blur(1px);
@@ -50,7 +66,11 @@
 .floating-asteroids::before {
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(100, 149, 237, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(100, 149, 237, 0.1) 0%,
+    transparent 70%
+  );
   top: 20%;
   left: 10%;
   animation: float 25s ease-in-out infinite alternate;
@@ -59,15 +79,23 @@
 .floating-asteroids::after {
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255, 127, 80, 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 127, 80, 0.1) 0%,
+    transparent 70%
+  );
   bottom: 15%;
   right: 10%;
   animation: float 30s ease-in-out infinite alternate-reverse;
 }
 
 @keyframes float {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  100% { transform: translate(50px, 50px) rotate(10deg); }
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(50px, 50px) rotate(10deg);
+  }
 }
 
 .section-header {
@@ -82,6 +110,40 @@
   margin-right: 1rem;
   font-size: 2rem;
   vertical-align: middle;
+}
+
+.project-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 10, 30, 0.6);
+  border-radius: 15px;
+  border: 1px solid rgba(100, 149, 237, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #6495ed;
+  line-height: 1;
+}
+
+.counter-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.25rem;
 }
 
 .project-filters {
@@ -168,6 +230,13 @@
   z-index: 10;
 }
 
+.project-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 .featured-badge {
   position: absolute;
   top: -10px;
@@ -207,13 +276,21 @@
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes orbit {
-  from { transform: translateX(-50%) rotate(0deg) translateX(30px) rotate(0deg); }
-  to { transform: translateX(-50%) rotate(360deg) translateX(30px) rotate(-360deg); }
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(30px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(30px) rotate(-360deg);
+  }
 }
 
 .solar-system-core {
@@ -235,8 +312,40 @@
 }
 
 @keyframes pulse {
-  from { transform: scale(1); }
-  to { transform: scale(1.2); }
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.project-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #6495ed;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(100, 149, 237, 0.3);
+  border-top: 3px solid #6495ed;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .project-details {
@@ -326,11 +435,13 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
-.tech-stack, .project-features {
+.tech-stack,
+.project-features {
   margin-bottom: 1.5rem;
 }
 
-.tech-stack h4, .project-features h4 {
+.tech-stack h4,
+.project-features h4 {
   color: #6495ed;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
@@ -365,24 +476,32 @@
   .details-content {
     flex-direction: column;
   }
-  
+
   .details-header {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .project-links {
     width: 100%;
     justify-content: flex-start;
   }
-  
+
   .close-btn {
     position: absolute;
     top: 1rem;
     right: 1rem;
   }
-}
 
+  .project-stats {
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .counter-number {
+    font-size: 2rem;
+  }
+}
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -390,13 +509,27 @@
     height: 60vh;
     min-height: 400px;
   }
-  
+
   .project-planet {
     width: 60px;
     height: 60px;
     font-size: 1.2rem;
   }
-  
+  .planet-tooltip {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 10, 30, 0.85);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(100, 149, 237, 0.3);
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+  }
   .filter-btn {
     padding: 0.6rem 1rem;
     font-size: 0.8rem;
